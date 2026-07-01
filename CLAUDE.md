@@ -23,3 +23,13 @@ No build, compile, or install step is required.
 - [index.html](index.html) — single-page entry point; link `style.css` and `script.js` here when content is added
 - [style.css](style.css) — global styles (currently empty)
 - [script.js](script.js) — client-side JS (currently empty)
+
+## Git Automation
+
+When I say the phrase "sync changes", "push changes", or "auto-push":
+
+1. Run `git add .` to stage all modifications.
+2. Run `git diff --staged` to analyze exactly what was changed.
+3. Generate a concise, professional commit message summarizing the diff.
+4. Execute `git commit -m "<your_generated_message>"`.
+5. Execute `git push` to upload to the remote repository.

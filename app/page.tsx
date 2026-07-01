@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 
@@ -49,12 +48,14 @@ export default function Home() {
           teaching Python fundamentals.
         </p>
         <div className="flex items-center gap-5">
-          <Link
-            href="/resume"
+          <a
+            href="/Caleb_Pickens_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
           >
             View Resume
-          </Link>
+          </a>
           <a
             href={SOCIAL.github}
             target="_blank"
