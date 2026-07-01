@@ -1,29 +1,12 @@
 import Link from "next/link";
+import { projects } from "@/data/projects";
+import ProjectCard from "@/components/ProjectCard";
 
 // ─── Update these to your real profile URLs ───────────────────────────────────
 const SOCIAL = {
   github: "https://github.com/calebpickens",
   linkedin: "https://linkedin.com/in/calebpickens",
 };
-
-// ─── Top Projects shown on the Home page ──────────────────────────────────────
-// Set `demo` to your subdomain URL when the project is live, e.g. "https://project1.calebpickens.com"
-const highlights = [
-  {
-    title: "Project One",
-    description:
-      "A brief description of what this project does and the problem it solves.",
-    tech: ["React", "TypeScript", "Node.js"],
-    demo: "#",
-  },
-  {
-    title: "Project Two",
-    description:
-      "Another project description showcasing a different set of skills.",
-    tech: ["Next.js", "Tailwind CSS", "PostgreSQL"],
-    demo: "#",
-  },
-];
 
 const skills = ["Python", "C", "Java", "Next.js", "React"];
 
@@ -99,38 +82,8 @@ export default function Home() {
         <div>
           <h2 className="text-2xl font-bold mb-6">Top Projects</h2>
           <div className="grid sm:grid-cols-2 gap-6">
-            {highlights.map((project) => (
-              <div
-                key={project.title}
-                className="bg-white rounded-xl border border-accent p-6 flex flex-col gap-4 shadow-sm"
-              >
-                <div>
-                  <h3 className="text-lg font-semibold mb-1">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-secondary leading-relaxed">
-                    {project.description}
-                  </p>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="bg-accent text-text text-xs px-3 py-1 rounded-full font-medium"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-auto w-fit bg-primary text-white text-sm font-medium px-4 py-2 rounded-lg hover:opacity-90 transition-opacity"
-                >
-                  Live Demo ↗
-                </a>
-              </div>
+            {projects.slice(0, 2).map((project) => (
+              <ProjectCard key={project.id} project={project} />
             ))}
           </div>
         </div>
