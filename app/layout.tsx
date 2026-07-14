@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Nav from "@/components/Nav";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Caleb Pickens",
@@ -13,10 +14,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen antialiased">
-        <Nav />
-        <main className="max-w-4xl mx-auto px-6">{children}</main>
+        <ThemeProvider>
+          <Nav />
+          <main className="max-w-4xl mx-auto px-6">{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );

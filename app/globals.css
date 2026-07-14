@@ -3,7 +3,37 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    --color-text: #01200F;
+    --color-background: #F1E7ED;
+    --color-primary: #0D2766;
+    --color-secondary: #1A5F7F;
+    --color-accent: #C4CCD5;
+    --color-wisteria: #c490d1;
+    --color-celadon: #94e8b4;
+  }
+
+  html[data-theme="whimsical"] {
+    --color-text: #0f172a;
+    --color-background: #7dd3fc;
+    --color-primary: #3066be;
+    --color-secondary: #1e40af;
+    --color-accent: #94e8b4;
+    --color-wisteria: #c490d1;
+    --color-celadon: #94e8b4;
+  }
+
   body {
     @apply bg-background text-text;
+    transition: background-color 0.6s ease, color 0.6s ease;
+  }
+}
+
+@keyframes theme-flash {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
   }
 }
